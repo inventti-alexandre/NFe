@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LineIN_ContabilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="EMPRESA_ID" />
+          </Key>
+          <Property Name="EMPRESA_ID" Type="int" Nullable="false" />
+          <Property Name="EMPRESA_CONTAFIX" Type="varchar" MaxLength="3" />
+          <Property Name="ENTIDADE_ID" Type="int" />
+          <Property Name="ATIVO_SN" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TIPO_PESSOA" Type="varchar" MaxLength="50" />
+          <Property Name="NOME_RAZAO" Type="varchar" MaxLength="1000" />
+          <Property Name="NOME_FANTASIA" Type="varchar" MaxLength="250" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="250" />
+          <Property Name="COMPLEMENTO" Type="varchar" MaxLength="250" />
+          <Property Name="BAIRRO" Type="varchar" MaxLength="250" />
+          <Property Name="MUNICIPIO" Type="varchar" MaxLength="250" />
+          <Property Name="COD_MUN" Type="int" />
+          <Property Name="UF" Type="varchar" MaxLength="2" />
+          <Property Name="CEP" Type="varchar" MaxLength="250" />
+          <Property Name="CNPJ_CPF" Type="varchar" MaxLength="250" />
+          <Property Name="INSCR_ESTADUAL" Type="varchar" MaxLength="250" />
+          <Property Name="INSCR_MUNICIPAL" Type="varchar" MaxLength="14" />
+          <Property Name="COD_ISS" Type="varchar" MaxLength="4" />
+          <Property Name="TIPO_TELEFONE1" Type="varchar" MaxLength="60" />
+          <Property Name="TELEFONE1" Type="varchar" MaxLength="60" />
+          <Property Name="TIPO_TELEFONE2" Type="varchar" MaxLength="60" />
+          <Property Name="TELEFONE2" Type="varchar" MaxLength="60" />
+          <Property Name="TIPO_TELEFONE3" Type="varchar" MaxLength="60" />
+          <Property Name="TELEFONE3" Type="varchar" MaxLength="60" />
+          <Property Name="CONTATO" Type="varchar" MaxLength="250" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="300" />
+          <Property Name="HOME_PAGE" Type="varchar" MaxLength="300" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_CADASTRO" Type="datetime" />
+          <Property Name="DATA_ALTERACAO" Type="datetime" />
+          <Property Name="USUARIO_ID" Type="int" />
+          <Property Name="RAPUR" Type="varchar" MaxLength="50" />
+          <Property Name="NIRE" Type="varchar" MaxLength="11" />
+          <Property Name="SESSAO" Type="date" />
+          <Property Name="DT_INI_CONTRATO" Type="datetime" />
+          <Property Name="DT_FIM_CONTRATO" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="USUARIO_ID" />
+          </Key>
+          <Property Name="USUARIO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOGIN" Type="varchar" MaxLength="250" />
+          <Property Name="SENHA" Type="varchar" MaxLength="50" />
+          <Property Name="PERFIL" Type="varchar" MaxLength="10" />
+          <Property Name="CT_COMP_ENCERRAMENTO" Type="int" />
+          <Property Name="LOCAL_ACESSO" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <Association Name="FK_EMPRESA_USUARIO">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUARIO_ID" />
+            </Principal>
+            <Dependent Role="EMPRESA">
+              <PropertyRef Name="USUARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LineIN_ContabilModelStoreContainer">
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_EMPRESA_USUARIO" Association="Self.FK_EMPRESA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LineIN_ContabilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="EMPRESA_ID" />
+          </Key>
+          <Property Name="EMPRESA_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMPRESA_CONTAFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ENTIDADE_ID" Type="Int32" />
+          <Property Name="ATIVO_SN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_PESSOA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_RAZAO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_FANTASIA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="COMPLEMENTO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MUNICIPIO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="COD_MUN" Type="Int32" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CNPJ_CPF" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="INSCR_ESTADUAL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="INSCR_MUNICIPAL" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ISS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_TELEFONE1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_TELEFONE2" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE2" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_TELEFONE3" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE3" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CONTATO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="HOME_PAGE" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_CADASTRO" Type="DateTime" Precision="3" />
+          <Property Name="DATA_ALTERACAO" Type="DateTime" Precision="3" />
+          <Property Name="USUARIO_ID" Type="Int32" />
+          <Property Name="RAPUR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIRE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="SESSAO" Type="DateTime" Precision="0" />
+          <Property Name="DT_INI_CONTRATO" Type="DateTime" Precision="3" />
+          <Property Name="DT_FIM_CONTRATO" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.FK_EMPRESA_USUARIO" FromRole="EMPRESA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="USUARIO_ID" />
+          </Key>
+          <Property Name="USUARIO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOGIN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SENHA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERFIL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CT_COMP_ENCERRAMENTO" Type="Int32" />
+          <Property Name="LOCAL_ACESSO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="Self.FK_EMPRESA_USUARIO" FromRole="USUARIO" ToRole="EMPRESA" />
+        </EntityType>
+        <Association Name="FK_EMPRESA_USUARIO">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUARIO_ID" />
+            </Principal>
+            <Dependent Role="EMPRESA">
+              <PropertyRef Name="USUARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LineIN_ContabilEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <AssociationSet Name="FK_EMPRESA_USUARIO" Association="Self.FK_EMPRESA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LineIN_ContabilModelStoreContainer" CdmEntityContainer="LineIN_ContabilEntities">
+          <EntitySetMapping Name="EMPRESA">
+            <EntityTypeMapping TypeName="LineIN_ContabilModel.EMPRESA">
+              <MappingFragment StoreEntitySet="EMPRESA">
+                <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+                <ScalarProperty Name="EMPRESA_CONTAFIX" ColumnName="EMPRESA_CONTAFIX" />
+                <ScalarProperty Name="ENTIDADE_ID" ColumnName="ENTIDADE_ID" />
+                <ScalarProperty Name="ATIVO_SN" ColumnName="ATIVO_SN" />
+                <ScalarProperty Name="TIPO_PESSOA" ColumnName="TIPO_PESSOA" />
+                <ScalarProperty Name="NOME_RAZAO" ColumnName="NOME_RAZAO" />
+                <ScalarProperty Name="NOME_FANTASIA" ColumnName="NOME_FANTASIA" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="MUNICIPIO" ColumnName="MUNICIPIO" />
+                <ScalarProperty Name="COD_MUN" ColumnName="COD_MUN" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="CNPJ_CPF" ColumnName="CNPJ_CPF" />
+                <ScalarProperty Name="INSCR_ESTADUAL" ColumnName="INSCR_ESTADUAL" />
+                <ScalarProperty Name="INSCR_MUNICIPAL" ColumnName="INSCR_MUNICIPAL" />
+                <ScalarProperty Name="COD_ISS" ColumnName="COD_ISS" />
+                <ScalarProperty Name="TIPO_TELEFONE1" ColumnName="TIPO_TELEFONE1" />
+                <ScalarProperty Name="TELEFONE1" ColumnName="TELEFONE1" />
+                <ScalarProperty Name="TIPO_TELEFONE2" ColumnName="TIPO_TELEFONE2" />
+                <ScalarProperty Name="TELEFONE2" ColumnName="TELEFONE2" />
+                <ScalarProperty Name="TIPO_TELEFONE3" ColumnName="TIPO_TELEFONE3" />
+                <ScalarProperty Name="TELEFONE3" ColumnName="TELEFONE3" />
+                <ScalarProperty Name="CONTATO" ColumnName="CONTATO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="HOME_PAGE" ColumnName="HOME_PAGE" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+                <ScalarProperty Name="DATA_CADASTRO" ColumnName="DATA_CADASTRO" />
+                <ScalarProperty Name="DATA_ALTERACAO" ColumnName="DATA_ALTERACAO" />
+                <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
+                <ScalarProperty Name="RAPUR" ColumnName="RAPUR" />
+                <ScalarProperty Name="NIRE" ColumnName="NIRE" />
+                <ScalarProperty Name="SESSAO" ColumnName="SESSAO" />
+                <ScalarProperty Name="DT_INI_CONTRATO" ColumnName="DT_INI_CONTRATO" />
+                <ScalarProperty Name="DT_FIM_CONTRATO" ColumnName="DT_FIM_CONTRATO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="LineIN_ContabilModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+                <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+                <ScalarProperty Name="CT_COMP_ENCERRAMENTO" ColumnName="CT_COMP_ENCERRAMENTO" />
+                <ScalarProperty Name="LOCAL_ACESSO" ColumnName="LOCAL_ACESSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
