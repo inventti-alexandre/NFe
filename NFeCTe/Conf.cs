@@ -8,6 +8,6 @@ namespace NFeCTe
 {
     public static class Conf
     {
-        public static List<LogXML> listaLog { get; set; }
+        public static List<LogXML> listaLog { get; set; }        
     }
 }

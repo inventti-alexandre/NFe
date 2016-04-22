@@ -75,6 +75,8 @@
       <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Confirmacao.aspx" />
+    <Content Include="Confirmacao2.aspx" />
+    <Content Include="Confirmacao3.aspx" />
     <Content Include="Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
@@ -98,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main.aspx" />
+    <Content Include="Sucesso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +112,21 @@
       <DependentUpon>Confirmacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Conf.cs" />
+    <Compile Include="Confirmacao2.aspx.cs">
+      <DependentUpon>Confirmacao2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmacao2.aspx.designer.cs">
+      <DependentUpon>Confirmacao2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmacao3.aspx.cs">
+      <DependentUpon>Confirmacao3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmacao3.aspx.designer.cs">
+      <DependentUpon>Confirmacao3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CopiarArquivos.cs" />
     <Compile Include="DadosLogin.cs" />
     <Compile Include="DeserializadorCteProc.cs" />
     <Compile Include="DeserializadorNfeProc.cs" />
@@ -308,6 +326,13 @@
     <Compile Include="Schemas\NFe\veicProd.cs" />
     <Compile Include="Schemas\NFe\veicTransp.cs" />
     <Compile Include="Schemas\NFe\vol.cs" />
+    <Compile Include="Sucesso.aspx.cs">
+      <DependentUpon>Sucesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sucesso.aspx.designer.cs">
+      <DependentUpon>Sucesso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="USUARIO.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>

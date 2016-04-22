@@ -10,7 +10,7 @@
 namespace NFeCTe {
     
     
-    public partial class Confirmacao {
+    public partial class Confirmacao3 {
         
         /// <summary>
         /// form1 control.
@@ -22,40 +22,31 @@ namespace NFeCTe {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// GridView1 control.
+        /// lbVer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label lbVer;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// lbFaltantes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.ListBox lbFaltantes;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// lbRes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
-        /// <summary>
-        /// lbTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTotal;
+        protected global::System.Web.UI.WebControls.Label lbRes;
         
         /// <summary>
         /// btnVoltar control.

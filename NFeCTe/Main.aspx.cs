@@ -17,14 +17,14 @@ namespace NFeCTe
         {
             DadosLogin.usuario = new USUARIO();
             DadosLogin.usuario.USUARIO_ID = 4;
-            DadosLogin.competencia = "12/2015";
+            DadosLogin.competencia = "01/2016";
             DadosLogin.empresa = new EMPRESA();
             DadosLogin.empresa.CNPJ_CPF = "64598857000138";
         }
 
         private void SaveFile(HttpPostedFile httpPostedFile)
         {
-            int i = 0;
+            int i = 0;            
             _path = Server.MapPath(@"~\uploads\" + DadosLogin.empresa.CNPJ_CPF.ToString() + "\\");
             DirectoryInfo dir = new DirectoryInfo(_path);
             if(!dir.Exists)
@@ -32,7 +32,7 @@ namespace NFeCTe
                 Directory.CreateDirectory(_path);
             }
             else
-            {
+            {                
                 Directory.Delete(_path,true);
                 Directory.CreateDirectory(_path);
             }
@@ -40,7 +40,7 @@ namespace NFeCTe
             {
                 //if (item.ContentType == "text/xml")
                 //{
-                    item.SaveAs(_path + item.FileName);
+                        item.SaveAs(_path + item.FileName);
                 //}
                 //else
                 //{
@@ -54,6 +54,7 @@ namespace NFeCTe
             FileInfo[] files;
             files = new FileInfo[dir.GetFiles().Count()];
             files = dir.GetFiles();
+            Session["Cliente"] = files;
             ImportacaoNFe imp = new ImportacaoNFe(files);
             Response.Redirect("Confirmacao.aspx");
         } 

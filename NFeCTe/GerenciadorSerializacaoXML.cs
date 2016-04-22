@@ -41,9 +41,14 @@ namespace Contabil
                 if(log.Estatus.Equals(TipoStatus.Erro.ToString())) return null;
             string escrituracao;
             if (log.Estatus.Equals(TipoStatus.Aviso.ToString())) escrituracao = "Não Escriturados";
-            else escrituracao = "Escriturados";            
+            else
+            {
+                escrituracao = "Escriturados";
+                log.Estatus = TipoStatus.Sucesso.ToString();
+            }            
             log.CaminhoDestino = @"D:\XML\" + DadosLogin.empresa.CNPJ_CPF + "\\" + DadosLogin.competencia.Substring(3,4)+DadosLogin.competencia.Substring(0,2) + "\\" + escrituracao + "\\" + log.NaturezaFiscal + "\\" + log.TipoNF;
-            
+            if(nfe != null) log.NumNf = nfe.NFe.infNFe.ide.nNF;
+            else log.NumNf = cte.CTe.infCte.ide.nCT;
             return nfe;
         }
 

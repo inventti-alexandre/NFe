@@ -62,7 +62,7 @@ namespace Contabil
                 //Verifica a redundância no LogXML retorna False antes de Salvar na ListaNfeProc
                 if (vRedunLogXML())
                 {
-                    CopiarArquivo(arquivoXML);
+                    //CopiarArquivo(arquivoXML);
                     if (log.Estatus != TipoStatus.Aviso.ToString())
                     {
                         nfeProcObj.nomeArq = arquivoXML.Name;
@@ -86,9 +86,9 @@ namespace Contabil
             }
         }
 
-        private void CopiarArquivo(FileInfo arquivo)
+        public void CopiarArquivo(FileInfo arquivo)
         {
-            if (!System.IO.Directory.Exists(log.CaminhoDestino));
+            if (!System.IO.Directory.Exists(log.CaminhoDestino))
                 System.IO.Directory.CreateDirectory(log.CaminhoDestino);
             if (log.Estatus != TipoStatus.Erro.ToString())
                 arquivo.CopyTo(log.CaminhoDestino + "\\" + arquivo, true);

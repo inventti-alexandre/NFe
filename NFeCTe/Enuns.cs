@@ -27,7 +27,8 @@ namespace Contabil
     public enum TipoStatus
     {
         Aviso = 1,
-        Erro = 2
+        Erro = 2,
+        Sucesso = 3
     }
 
     public enum NaturezaEmitente

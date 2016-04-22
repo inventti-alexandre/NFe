@@ -17,7 +17,7 @@ namespace CTe
         private int _forPag;
         private int _mod;
         private int _serie;
-        private string _nCT;
+        private int _nCT;
         private string _dhEmi;
         private int _tpImp;
         private int _tpEmis;
@@ -48,7 +48,7 @@ namespace CTe
         public int forPag { get { return _forPag; } set { _forPag = value; } }
         public int mod { get { return _mod; } set { _mod = value; } }
         public int serie { get { return _serie; } set { _serie = value; } }
-        public string nCT { get { return _nCT; } set { _nCT = value; } }
+        public int nCT { get { return _nCT; } set { _nCT = value; } }
         public string dhEmi { get { return _dhEmi; } set { _dhEmi = value; } }
         public int tpImp { get { return _tpImp; } set { _tpImp = value; } }
         public int tpEmis { get { return _tpEmis; } set { _tpEmis = value; } }

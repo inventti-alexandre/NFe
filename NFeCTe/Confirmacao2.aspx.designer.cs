@@ -10,7 +10,7 @@
 namespace NFeCTe {
     
     
-    public partial class Confirmacao {
+    public partial class Confirmacao2 {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,13 @@ namespace NFeCTe {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// GridView1 control.
+        /// ASPxGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
         /// ObjectDataSource1 control.
@@ -40,24 +40,6 @@ namespace NFeCTe {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// CheckBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
-        /// <summary>
-        /// lbTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTotal;
-        
-        /// <summary>
         /// btnVoltar control.
         /// </summary>
         /// <remarks>
@@ -67,12 +49,12 @@ namespace NFeCTe {
         protected global::System.Web.UI.WebControls.LinkButton btnVoltar;
         
         /// <summary>
-        /// btnEnviar control.
+        /// btnProximo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnEnviar;
+        protected global::System.Web.UI.WebControls.LinkButton btnProximo;
     }
 }
